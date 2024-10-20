@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --clr-primary-500: hsl(158, 36%, 25%);
+  --clr-primary-400: hsl(158, 36%, 37%);
+  --clr-secondary-200: hsl(30, 38%, 92%);
+
+  --clr-neutral-900: hsl(212, 21%, 14%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --ff-base: "Montserrat", sans-serif;
+  --ff-accent: "Fraunces", serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+body {
+  background-color: var(--clr-secondary-200);
+  color: var(--clr-neutral-400);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+
+  display: grid;
+  place-content: center;
+  padding-block: 1em;
+  padding-inline: 1em;
+}
+
+.product {
+  max-inline-size: 37.5rem;
+  overflow: hidden;
+
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.5em;
+}
+
+.product__content {
+  display: grid;
+  gap: 1em;
+
+  padding: 1.85em;
+}
+
+.product__category {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+}
+
+.product__title {
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--clr-neutral-900);
+}
+
+.product__prices {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.product__price {
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+  color: var(--clr-primary-400);
+}
+
+.product__original-price {
+  font-size: 0.8rem;
+}
+
+.product__cart-btn {
+  cursor: pointer;
+  background-color: var(--clr-primary-400);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-100);
+  border: none;
+  border-radius: 5px;
+
+  padding: 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+
+  transition: 250ms;
+}
+
+.product__cart-btn:is(:focus, :hover) {
+  background-color: var(--clr-primary-500);
+}
+
+@media screen and (min-width: 37.5em) {
+  .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product__content {
+    padding: 2rem;
+  }
+}
