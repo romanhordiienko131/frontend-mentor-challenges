@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+:root {
+  --clr-moderate-violet: hsl(263, 55%, 52%);
+  --clr-very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --clr-very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-gray: hsl(0, 0%, 81%);
+  --clr-light-grayish-blue: hsl(210, 46%, 95%);
+
+  --fw-regular: 500;
+  --fw-bold: 600;
+}
+
+body {
+  background-color: var(--clr-light-grayish-blue);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: var(--fw-regular);
+  font-size: 0.813rem;
+  color: var(--clr-white);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5em 2em;
+}
+
+.item:nth-child(1) {
+  grid-area: one;
+}
+
+.item:nth-child(2) {
+  grid-area: two;
+}
+
+.item:nth-child(3) {
+  grid-area: three;
+}
+
+.item:nth-child(4) {
+  grid-area: four;
+}
+
+.item:nth-child(5) {
+  grid-area: five;
+}
+
+.list {
+  max-width: 73rem;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+  gap: 2em;
+}
+
+.item {
+  border-radius: 10px;
+  padding: 2.3em;
+  display: grid;
+  gap: 1em;
+}
+
+.item:nth-child(1) {
+  background-image: url(/images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 10%;
+}
+
+.item[data-color="violet"] {
+  background-color: var(--clr-moderate-violet);
+
+  .image {
+    border: 2px solid #a37ad8;
+  }
+}
+
+.item[data-color="gray"] {
+  background-color: var(--clr-very-dark-grayish-blue);
+}
+
+.item[data-color="black"] {
+  background-color: var(--clr-very-dark-blackish-blue);
+
+  .image {
+    border: 2px solid var(--clr-moderate-violet);
+  }
+}
+
+.item[data-color="white"] {
+  background-color: var(--clr-white);
+  color: var(--clr-very-dark-grayish-blue);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.image {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.info {
+  font-size: 0.75rem;
+}
+
+.status {
+  opacity: 50%;
+}
+
+.quote {
+  font-size: 1.2rem;
+  font-weight: var(--fw-bold);
+}
+
+.text {
+  opacity: 70%;
+}
+
+@media screen and (min-width: 70em) {
+  .list {
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
+}
